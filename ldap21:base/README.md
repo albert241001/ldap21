@@ -23,3 +23,5 @@ ldapsearch -x -LLL -h ldap.edt.org -b 'dc=edt,dc=org'
 ``` 
 
 
+ldapadd -x -c -h 172.17.0.2 -D 'cn=Manager,dc=edt,dc=org' -w secret -f afegir.ldif 
+ldapdelete -vx -h 172.17.0.2 -D 'cn=Manager,dc=edt,dc=org' -w secret -f eliminats.ldif 
