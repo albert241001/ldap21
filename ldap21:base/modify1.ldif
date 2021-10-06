@@ -1,0 +1,3 @@
+#exemple modificar
+dn: cn=Pau Pou,ou=usuaris,dc=edt,dc=org
+changetype: 
