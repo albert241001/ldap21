@@ -11,31 +11,17 @@ ASIX M06-ASO Escola del treball de barcelona
 
  * **edtasixm06/ldap21:editat** Servidor LDAP amb la base de dades edt.org
    S'ha fet el següent:
-
-   * generar un sol fitxer ldif anomenat edt.org.ldif
-   * afegir en el fitxer dos usuaris i una ou nova inventada.
-   * modificar el fitxer edt.org.ldif  modificant dn dels usuaris
-     utilitzant en lloc del cn el uid per identificar-los. 
-   * configurar el password de Manager que sigui ‘secret’ però 
-     encriptat (posar-hi un comentari per indicar quin és de cara a estudiar).
-   * afegir el fitxer de configuració client.
-   * propagar el port amb -p -P
-   * editar els dos README, en el general afegir que tenim una nova imatge. 
-     En el de la imatge ldap21:editat descriure els canvis i les ordres 
-     per posar-lo en marxa.
-
+   * futbolista-A-schema derivat de inetorgperson,structural,injectat dades de dades-FutbolA-ldif
 
 ```
-docker network create hisx2
-docker build -t edtasixm06/ldap21:editat .
-
-docker run --rm --name ldap.edt.org -h ldap.edt.org --net hisx2 -p 389:389 -d edtasixm06/ldap21:base
-
-docker ps
-
-ldapsearch -x -LLL -h ldap.edt.org -b 'dc=edt,dc=org'
-``` 
+ 
 
 docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389 -it albert241001/ldap21:schema /bin/bash
 docker build -t albert241001/ldap21:schema ./ldap21\:schema/
 git clone https://www.github.com/edtasixm06/ldap21.git
+bash startup.sh 
+ldapadd -vx -D 'cn=Manager,dc=edt,dc=org' -w secret -f datafutbol.ldif 
+
+docker run --rm --name phpldapadmin.edt.org -h phpldapadmin.edt.org --net 2hisix -p80:80 -d edtasixm06/phpldapadmin:20
+
+``` 

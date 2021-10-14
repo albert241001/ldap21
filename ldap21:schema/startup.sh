@@ -11,8 +11,7 @@ slapcat
 
 chown -R openldap.openldap /etc/ldap/slapd.d /var/lib/ldap
 cp /opt/docker/ldap.conf /etc/ldap/ldap.conf
-/usr/sbin/slapd -d0 
-
+/usr/sbin/slapd 
 
 # Pendent:
 # configuració client
