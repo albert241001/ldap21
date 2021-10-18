@@ -1,0 +1,32 @@
+# futbolista.schema
+#
+# c-data_compr
+# c-preu_compra
+# c-pagat
+#
+# ---------------------------------------------------------
+
+attributetype (1.1.2.1.1 NAME 'c-data_compr'
+  DESC 'data de la compra'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.36)
+
+attributetype (1.1.2.1.2 NAME 'c-preu_compra'
+   DESC 'Preu de la compra'
+   SYNTAX 1.3.6.1.4.1.1466.115.121.1.27)
+
+attributetype (1.1.2.1.3 NAME 'c-pagat'
+   DESC 'YES / NO'
+   SYNTAX ​1.3.6.1.4.1.1466.115.121.1.​7)
+   
+objectclass (1.1.2.2.2 NAME 'c-client'
+   DESC 'Client'
+   SUP  p-persona
+   STRUCTURAL
+   MUST (c-data_compr $ c-preu_compra)
+   MAY c-pagat
+   )
+
+
+
+
+

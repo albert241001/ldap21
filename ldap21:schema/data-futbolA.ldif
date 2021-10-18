@@ -1,6 +1,7 @@
-dn: x-lonom=dembele,ou=usuaris,dc=edt,dc=org
-objectClass: x-Futbolista
-x-lonom: dembele
+dn: cn=dembele,ou=usuaris,dc=edt,dc=org
+objectClass: x-futbolista
+cn: dembele
+sn: lo crack
 x-equip: barca
 x-lesionat: TRUE
 

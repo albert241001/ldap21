@@ -1,7 +1,7 @@
 # ldapserver
 FROM debian:latest
 LABEL version="1.0"
-LABEL author="@edt ASIX-M06"
+LABEL author="@albert241001"
 LABEL subject="ldapserver"
 RUN apt-get update
 ARG DEBIAN_FRONTEND=noninteractive
