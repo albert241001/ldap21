@@ -1,5 +1,5 @@
 # LDAP Server
-## @edt ASIX M06-ASO 2021-2022
+## @Albert Blanco villar
 ### Servidor LDAP (Debian 11)
 
 Podeu trobar les imatges docker al Dockehub de [edtasixm06](https://hub.docker.com/u/edtasixm06/)
@@ -9,7 +9,7 @@ Podeu trobar la documentació del mòdul a [ASIX-M06](https://sites.google.com/s
 ASIX M06-ASO Escola del treball de barcelona
 
 
- * **edtasixm06/ldap21:editat** Servidor LDAP amb la base de dades edt.org
+ * **ldap21:editat** Servidor LDAP amb la base de dades edt.org
    S'ha fet el següent:
    * futbolista-A-schema derivat de inetorgperson,structural,injectat dades de dades-FutbolA-ldif
 
