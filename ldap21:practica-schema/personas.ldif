@@ -1,0 +1,20 @@
+dn: cn=ramon ferrer,ou=usuaris,dc=edt,dc=org
+objectClass: inetOrgPerson
+objectClass: p-persona
+objectClass: v-venedor
+cn: ramon ferrer
+sn: ramon
+p-dni: 47320911Z
+v-ventes: 12000
+v-sou: 1200
+
+
+dn: cn=paco ferrer,ou=usuaris,dc=edt,dc=org
+objectClass: inetOrgPerson
+objectClass: p-persona
+objectClass: v-venedor
+cn: paco ferrer
+sn: paco
+p-dni: 47320911Y
+v-ventes: 12000
+v-sou: 1200

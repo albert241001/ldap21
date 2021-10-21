@@ -1,0 +1,34 @@
+# futbolista.schema
+#
+# f-numfills
+# f-casat
+# f-kmtreball
+#
+# ---------------------------------------------------------
+
+attributetype (1.1.2.1.1 NAME 'f-numfills'
+   DESC 'Preu de la compra'
+   SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+   SINGLE-VALUE)   
+
+attributetype (1.1.2.1.2 NAME 'f-casat'
+   DESC 'YES / NO'
+   SYNTAX ​1.3.6.1.4.1.1466.115.121.1.​7
+   SINGLE-VALUE)
+   
+attributetype (1.1.2.1.3 NAME 'f-kmtreball'
+   DESC 'Km de casa al treball'
+   SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+   SINGLE-VALUE)  
+   
+objectclass (1.1.2.2.4 NAME 'c-client'
+   DESC 'Persones'
+   SUP  v-venedor
+   AUXILIARY
+   MUST (f-numfills $ f-casat $ f-kmtreball)
+   )
+
+
+
+
+

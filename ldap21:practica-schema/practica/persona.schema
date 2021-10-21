@@ -1,0 +1,30 @@
+# futbolista.schema
+#
+# p-dni
+# p-photo
+# ---------------------------------------------------------
+
+attributetype (1.1.2.1.1 NAME 'p-dni'
+  DESC 'dni de la persona'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  SINGLE-VALUE )
+
+attributetype (1.1.2.1.2 NAME 'p-photo'
+   DESC 'fotografia  de la persona'
+   SYNTAX 1.3.6.1.4.1.1466.115.121.1.28)
+
+
+objectclass (1.1.2.2.1 NAME 'p-persona'
+   DESC 'Persones'
+   SUP  inetOrgPerson
+   STRUCTURAL
+   MUST p-dni
+   MAY  p-photo
+   )
+
+
+
+
+
