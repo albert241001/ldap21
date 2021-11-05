@@ -17,24 +17,38 @@ ldapsearch -x -LLL -D 'cn=Sysadmin,cn=config' -w syskey -b 'cn= config' olcDatab
 ldapsearch -x -LLL -D 'cn=Sysadmin,cn=config' -w syskey -b 'cn= config' olcDatabase={1}mdb
 ldapmodify -vxc -D 'cn=Sysadmin,cn=config' -w syskey -f acl1.ldif 
 
-
 #01-->Tots veuen tot
+
 dn: olcDatabase={1}mdb,cn=config
+
 changetype: modify
+
 delete: olcAccess
+
 -
+
 add: olcAccess
+
 olcAccess: to * by * read
 #------------------------------
 ldapsearch -x -LLL
+
 ldapsearch -x -LLL -D 'uid=anna,ou=usuaris,dc=edt,dc=org' -w anna 'uid=anna'
+
 ldapsearch -x -LLL -D 'uid=anna,ou=usuaris,dc=edt,dc=org' -w anna 'uid=user01'
+
 ldapmodify -x -D "uid=anna,ou=usuaris,dc=edt,dc=org" -w anna -f modify1.ldif
+
 --modifying entry "uid=pau,ou=usuaris,dc=edt,dc=org"
+
 --ldap_modify: Insufficient access (50)
+
 ldapmodify -x -D "uid=anna,ou=usuaris,dc=edt,dc=org" -w anna -f modify1.ldif
+
 --modifying entry "uid=anna,ou=usuaris,dc=edt,dc=org"
+
 --ldap_modify: Insufficient access (50)
+
 #02-->Tots poden modificar
 dn: olcDatabase={1}mdb,cn=config
 changetype: modify
